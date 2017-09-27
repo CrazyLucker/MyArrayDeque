@@ -13,9 +13,12 @@ public class MyArrayDeque {
         size = 16;
     }
 
-    MyArrayDeque(int capacity){
+    MyArrayDeque(int capacity) throws MyConstructorException{
         my = new ArrayDeque<>(capacity);
         size = capacity;
+        if (capacity <1) {
+            throw new MyConstructorException("The digit can not be <1");
+        }
     }
 
     void add(int object) {
@@ -25,6 +28,10 @@ public class MyArrayDeque {
             int delete = my.pollFirst();
             my.addLast(object);
         }
+    }
+
+    int size(){
+        return size;
     }
 
     @Override
