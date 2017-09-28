@@ -8,8 +8,7 @@ public class Main {
         try {
             my = new MyArrayDeque(-10);
         } catch (MyConstructorException e) {
-            e.getMessage();
+            System.out.println(e.toString());
         }
-        //System.out.print(my.size());
     }
 }
